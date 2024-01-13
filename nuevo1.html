@@ -1,45 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traductor de Página Web</title>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página con Color de Fondo</title>
 </head>
-<body>
+<body style="background-color: #3498db; margin: 0; padding: 0; height: 100vh; display: flex; align-items: center; justify-content: center; color: #ffffff; font-family: Arial, sans-serif;">
 
-    <h1>Texto para Traducir</h1>
-    <p id="text-to-translate">¡Hola, mundo!</p>
-
-    <h2>Traducción</h2>
-    <p id="translated-text"></p>
-
-    <button onclick="translateText()">Traducir</button>
-
-    <script>
-        function translateText() {
-            // Obtiene el texto a traducir
-            const textToTranslate = document.getElementById('text-to-translate').innerText;
-
-            // Define el idioma de origen (en este caso, español) y el idioma al que se traducirá (en este caso, inglés)
-            const sourceLanguage = 'es';
-            const targetLanguage = 'en';
-
-            // Llama a la API de Google Translate (usando jQuery.ajax para simplicidad)
-            $.ajax({
-                url: `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${sourceLanguage}&tl=${targetLanguage}&dt=t&q=${encodeURIComponent(textToTranslate)}`,
-                dataType: 'json',
-                success: function (data) {
-                    // Extrae y muestra la traducción
-                    const translation = data[0][0][0];
-                    document.getElementById('translated-text').innerText = translation;
-                },
-                error: function (error) {
-                    console.error('Error al traducir:', error);
-                }
-            });
-        }
-    </script>
+  <h1>Bienvenido a mi página web</h1>
+  <p>Aquí puedes agregar tu contenido...</p>
 
 </body>
 </html>
